@@ -10,6 +10,7 @@ class registerButton extends React.Component {
     }
 
     handleRegister = () => {
+        this.props.handleForm()
         return (
             this.setState({redirect:true})
         )

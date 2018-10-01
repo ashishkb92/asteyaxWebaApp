@@ -4,4 +4,27 @@ import AppRouter from './router/AppRouter'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-ReactDOM.render(<div><AppRouter /></div>, document.getElementById('app'));
+
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            userName: '',
+            userMobile: ''
+        }
+    }
+
+    handleForm = (e) => {
+        console.log(e)
+    }
+
+    render() {
+        return (
+            <div>
+                <AppRouter handleForm = {this.handleForm} />
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
