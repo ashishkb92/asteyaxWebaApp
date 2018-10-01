@@ -6,15 +6,16 @@ import DashboardPage from '../components/Dashboard'
 import HelpPage from '../components/Help'
 import NotFoundPage from '../components/NotFound'
 
-const AppRouter = () => {
+const AppRouter = (props) => {
+    const { handleForm, userName, userMobile } = props;
     return (
         <BrowserRouter>
             <div>
                 <Header />
                 <Switch>
-                    <Route path="/" component={RegisterPage} exact={true} />
-                    <Route path="/register" render = {(props) => <RegisterPage  {...props} />} />
-                    <Route path="/dashboard" component={DashboardPage} />
+                    <Route path="/" render = {(props) => <RegisterPage {...props} handleForm={handleForm} />} exact={true} />
+                    <Route path="/register" render = {(props) => <RegisterPage {...props} handleForm={handleForm} />} />
+                    <Route path="/dashboard" render = {(props) => <DashboardPage {...props} userName={userName} userMobile={userMobile} />}  />
                     <Route path="/help" component={HelpPage} />
                     <Route component={NotFoundPage} />
                 </Switch>

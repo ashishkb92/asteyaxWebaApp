@@ -2,11 +2,10 @@ import React from 'react';
 import RegisterForm from './Form'
 import RegisterButton from './RegisterButton'
 
-const registerPage = () => {
+const registerPage = (props) => {
     return (
         <div>
-            <RegisterForm /> 
-            <RegisterButton />
+            <RegisterForm handleForm={props.handleForm}/> 
         </div>
     )
 }

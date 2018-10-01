@@ -14,14 +14,15 @@ class App extends React.Component {
         }
     }
 
-    handleForm = (e) => {
-        console.log(e)
+    handleForm = ({userName, userMobile}) => {
+        this.setState({userName, userMobile})
     }
 
     render() {
+        const {userName, userMobile} = this.state;
         return (
             <div>
-                <AppRouter handleForm = {this.handleForm} />
+                <AppRouter handleForm = {this.handleForm} userName={userName} userMobile={userMobile} />
             </div>
         )
     }

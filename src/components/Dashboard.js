@@ -1,10 +1,10 @@
 import React from 'react';
 import RegisterForm from './Form';
 
-const dashboardPage = () => {
+const dashboardPage = ({userName, userMobile}) => {
     return (
         <div>
-            <RegisterForm />
+            <RegisterForm userName={userName} userMobile={userMobile}/>
         </div>
     )
 }
